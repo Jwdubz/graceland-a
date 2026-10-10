@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Graceland Wedding Chapel | Las Vegas</title>
+<meta name="description" content="Graceland Wedding Chapel in Las Vegas.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#88c0f0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graceland Wedding Chapel">
+<meta property="og:description" content="Graceland Wedding Chapel in Las Vegas.">
+<meta property="og:url" content="https://graceland.jarrettwroten.com/">
+<meta property="og:image" content="https://graceland.jarrettwroten.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graceland Wedding Chapel">
+<meta name="twitter:description" content="Graceland Wedding Chapel in Las Vegas.">
+<meta name="twitter:image" content="https://graceland.jarrettwroten.com/img/og.jpg">
+<link rel="preload" href="img/hero-poster.jpg" as="image">
+<link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+<div class="loader" aria-hidden="true"><p class="loader__mark">Graceland</p></div>
+<header class="hdr">
+  <a class="hdr__mark" href="#top"><img src="img/logo.png" alt="Graceland Wedding Chapel, Las Vegas" width="600" height="400"></a>
+  <a class="btn" href="tel:{{PHONE}}">Call {{PHONE}}</a>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero__film media">
+      <img class="hero__still" src="img/hero-poster.jpg" alt="">
+      <video class="film" id="film-hero" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg">
+        <source src="film/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="plaque">
+      <h1 class="hero__h">
+        <span class="hl" data-split>Graceland</span>
+        <!-- Held until the officiant is with the couple in film/hero.mp4, then it stays. -->
+        <span class="hl hl--pay" data-split data-payoff="11.43">Married</span>
+      </h1>
+      <p class="plaque__place" data-reveal>Las Vegas</p>
+    </div>
+  </section>
+
+  <section class="aisle">
+    <figure class="aisle__fig">
+      <img src="img/pews.jpg" width="1000" height="1000" alt="Beige pews along a brown aisle, facing a white arch">
+    </figure>
+    <div class="plaque plaque--side">
+      <h2 data-split>The Aisle</h2>
+      <p data-reveal>It ends at a white arch.</p>
+    </div>
+  </section>
+
+  <section class="pole">
+    <figure class="pole__fig">
+      <img src="img/sign.jpg" width="667" height="1000" alt="The Graceland Wedding Chapel sign on a blue pole, with 619 on the pole">
+    </figure>
+    <div class="plaque plaque--side">
+      <h2 data-split>619</h2>
+      <!-- VERIFY: script line read from sign.jpg, under Wedding Chapel -->
+      <p data-reveal>The board says it presents a storybook chapel.</p>
+      <!-- VERIFY: wording from a frame of film/ig-DWzKqDeASXk.mp4, not the sign standing out front now -->
+      <p data-reveal>An older piece of footage shows a sign that reads, Rock Star Jon Bon Jovi Was Married Here.</p>
+    </div>
+  </section>
+
+  <section class="car">
+    <figure class="car__fig">
+      <img src="img/cadillac.jpg" width="1600" height="1067" alt="A pink car parked by the chapel, a couple beside it, and an arrow by the door">
+    </figure>
+    <div class="plaque">
+      <h2 data-split>The Pink Car</h2>
+      <!-- VERIFY: small blue arrow in cadillac.jpg -->
+      <p data-reveal>The arrow by the door says Chapel Entrance.</p>
+    </div>
+  </section>
+
+  <section class="door" id="call">
+    <figure class="door__fig">
+      <img src="img/front.jpg" width="1000" height="750" alt="The white chapel with a blue roof, a stone clock tower, and the wedding chapel sign">
+    </figure>
+    <div class="plaque">
+      <h2 data-split>Call The Chapel</h2>
+      <!-- VERIFY: no phone number in FILES.txt or in the assets opened for this build -->
+      <a class="btn btn--big" href="tel:{{PHONE}}" data-reveal>Call {{PHONE}}</a>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Graceland Wedding Chapel, Las Vegas</p>
+  <button class="btn totop" type="button">Back To Top</button>
+</footer>
+<button class="motion" type="button" aria-pressed="false" aria-label="Pause Motion"><span class="motion__txt">Pause</span></button>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="kit.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

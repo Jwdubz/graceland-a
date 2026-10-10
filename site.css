@@ -1,0 +1,305 @@
+/* The Sign Window.
+   Craft source: Odyssée — film-first viewport, one held last word, one Pause, no jump nav.
+   Our files. Not their code, type, or pictures.
+   Palette from their logo.png: sky #88c0f0, navy #001850, bulb gold #f5df53.
+   Display: Cormorant Garamond. Text and buttons: Figtree. Two families. */
+
+:root {
+  --sky: #88c0f0;
+  --navy: #001850;
+  --gold: #f5df53;
+  --hdr: calc(4.25rem + env(safe-area-inset-top));
+  --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --text: "Figtree", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("fonts/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("fonts/CormorantGaramond-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html { background: var(--sky); }
+body {
+  background: var(--sky);
+  color: var(--navy);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 450;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+/* loader: sky, not a black void. ~1s clip, Odyssée-scale [R] */
+.loader {
+  background: var(--sky);
+  color: var(--navy);
+}
+.loader__mark {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 560;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+/* header is a solid sign plate. No blur, no scrim on the film. */
+.hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--hdr);
+  padding: env(safe-area-inset-top) max(1rem, env(safe-area-inset-right)) 0 max(1rem, env(safe-area-inset-left));
+  background: var(--sky);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-sizing: border-box;
+}
+.hdr--solid {
+  background: var(--sky);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.hdr__mark {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+.hdr__mark img {
+  height: 3.25rem;
+  width: auto;
+  display: block;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.65rem 1rem;
+  box-sizing: border-box;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+.btn--big {
+  font-size: 1.125rem;
+  padding: 0.85rem 1.25rem;
+}
+
+/* Pause is a plate, not the kit pill. Tracking stays 0. */
+.motion {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  border-radius: 0;
+  border: 0;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  padding: 0.65rem 1rem;
+}
+.motion:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.skip:focus {
+  font-family: var(--text);
+  letter-spacing: 0;
+}
+
+h1, h2, .hl {
+  font-family: var(--display);
+  font-weight: 560;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  margin: 0;
+}
+h2 {
+  font-size: clamp(3.1rem, 6.5vw, 6.25rem);
+}
+.hero__h {
+  font-size: clamp(2.75rem, 5.4vw, 4.75rem);
+}
+.hl--pay {
+  font-style: italic;
+  font-weight: 500;
+}
+/* keep italic descenders inside the mask */
+.split-mask { padding-block: 0.08em 0.16em; }
+
+.plaque {
+  padding: clamp(1rem, 2.4vw, 1.75rem) max(1.25rem, env(safe-area-inset-right)) clamp(1.25rem, 2.5vw, 2rem) max(1.25rem, env(safe-area-inset-left));
+  background: var(--sky);
+}
+.plaque p {
+  max-width: 38rem;
+  margin: 0.85rem 0 0;
+  padding-right: 5.25rem;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.plaque__place {
+  margin-top: 0.35rem;
+  font-family: var(--text);
+  font-size: 1.25rem;
+  font-weight: 560;
+  letter-spacing: 0;
+}
+.plaque--side { display: flex; flex-direction: column; justify-content: flex-end; }
+
+/* hero: film is the window. Type sits on the sky under it, never on a face. */
+.hero {
+  min-height: calc(100vh - var(--hdr));
+  min-height: calc(100svh - var(--hdr));
+  display: flex;
+  flex-direction: column;
+  background: var(--sky);
+}
+main { padding-top: var(--hdr); }
+.hero__film {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 42vh;
+  min-height: 42svh;
+  background: var(--sky);
+  overflow: hidden;
+}
+/* contain: the whole 16:9 frame stays, so neither person is cropped */
+.hero__still,
+.hero__film video.film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+.hero__film video.film { z-index: 1; background: transparent; }
+/* phone: show the whole 16:9 frame so neither person is cropped out */
+@media (max-width: 760px) {
+  .hero { min-height: 0; }
+  .hero__film {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    height: auto;
+  }
+  .hero__still,
+  .hero__film video.film { object-fit: cover; object-position: center center; }
+  .hdr__mark img { height: 2.75rem; }
+  h2 { font-size: clamp(3.1rem, 16vw, 4.6rem); max-width: calc(100% - 5.5rem); }
+  .hero__h { font-size: clamp(3.25rem, 15vw, 4.8rem); }
+}
+
+figure { margin: 0; }
+.aisle__fig img,
+.pole__fig img,
+.car__fig img,
+.door__fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.aisle, .pole {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  background: var(--sky);
+  align-items: center;
+}
+.aisle__fig, .pole__fig {
+  min-height: 0;
+  background: var(--sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aisle__fig img, .pole__fig img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100svh - var(--hdr));
+  object-fit: contain;
+  object-position: center center;
+  background: var(--sky);
+}
+
+@media (max-width: 760px) {
+  .aisle, .pole { grid-template-columns: 1fr; }
+  .aisle__fig, .pole__fig { min-height: 0; }
+  .aisle__fig img, .pole__fig img {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem max(1.25rem, env(safe-area-inset-right)) calc(5.5rem + env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+  background: var(--sky);
+}
+.foot p {
+  margin: 0;
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 560;
+  letter-spacing: 0;
+}
+
+/* gold rule under the name, the only gold in the type */
+.hero__h { position: relative; }
+.plaque .hero__h::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  background: var(--gold);
+}
